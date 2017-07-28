@@ -88,11 +88,19 @@ class ServicesController < ApplicationController
   end
 
   def general_conditions_download
-    send_file(
-        "#{Rails.root}/public/assets/Uvjeti_upotrebe_usluge_MaaS360_uskladjeno _s_odvjetnikom_clean.docx",
-        filename: "Uvjeti upotrebe usluge MaaS360.docx",
-        type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-    )
+    if I18n.locale == :hr
+      send_file(
+          "#{Rails.root}/public/assets/OUK_MDM_web_hr.pdf",
+          filename: "Uvjeti upotrebe usluge MaaS360.pdf",
+          type: "application/pdf"
+      )
+    else
+      send_file(
+          "#{Rails.root}/public/assets/OUK_MDM_web_en.pdf",
+          filename: "General terms and conditions MaaS360.pdf",
+          type: "application/pdf"
+      )
+    end
   end
 
   private
