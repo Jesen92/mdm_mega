@@ -52,4 +52,35 @@ ActiveAdmin.register User do
     f.actions
   end
 
+  show do
+    attributes_table do
+      row :id
+      row :email
+      row :encrypted_password
+      row :reset_password_token
+      row :reset_password_sent_at
+      row :remember_created_at
+      row :sign_in_count
+      row :current_sign_in_at
+      row :last_sign_at
+      row :current_sign_in_at
+      row :current_sign_in_ip
+      row :last_sign_ip
+      row :created_at
+      row :updated_at
+      row :first_name
+      row :last_name
+      row :country
+      row :city
+      row :address
+      row :company
+      row :cin
+      row :phone
+      row :admin
+      row :postal_code
+      row :free_trial_requested
+      row :spam_indicator
+    end
+  end
+
 end
